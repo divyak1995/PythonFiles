@@ -27,12 +27,29 @@ class LinkedList:
             a=a.next
             b=b.next.next
         return a.val
-
+        
+    def insert(self, newNode):
+        last=self.head
+        while last.next:
+            last=last.next
+        last.next= newNode
+        
+    def delete(self, deleteNode):
+        n=self.head
+        if n==deleteNode:
+            self.head=n.next
+        else:
+            while n.next is not None:
+                if deleteNode==n.next:
+                    n.next=n.next.next
+                    break
+                
 
 llist = LinkedList() 
 llist.head = Node(1) 
 second = Node(2) 
 third = Node(3) 
+fourth = Node(4)
 
 llist.head.next = second;
 second.next=third
@@ -40,6 +57,19 @@ second.next=third
 print llist.middleElement()
 
 llist.printList()
+
+llist.insert(fourth)
+
+print ''
+
+llist.printList()
+
+llist.delete(second)
+
+print ''
+
+llist.printList()
+
 
 
 

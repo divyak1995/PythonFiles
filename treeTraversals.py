@@ -36,6 +36,23 @@ def postorderTraversal(root):
     postorderTraversal(root.right)
     print(root.value,end=' ')
 
+#Level order Traversal
+# 1 2 3 4 5
+
+def levelOrderTraversal(root):
+  queue=[]
+  if root is None:
+    return
+  queue.append(root)
+  while len(queue)>0:
+    node=queue.pop(0)
+    print(node.value,end=' ')
+    if node.left is not None:
+      queue.append(node.left)
+    if node.right is not None:
+      queue.append(node.right)
+
+
 
 root= Node(1)
 root.left = Node(2)
@@ -48,3 +65,6 @@ print()
 preorderTraversal(root)
 print()
 postorderTraversal(root)
+print()
+levelOrderTraversal(root)
+print()

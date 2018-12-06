@@ -1,24 +1,16 @@
-graph = {'A': set(['B', 'C']),
-         'B': set(['A', 'D', 'E']),
-         'C': set(['A', 'F']), 
-         'D': set(['B']),
-         'E': set(['B', 'F']),
-         'F': set(['C', 'E'])}
-
-         
-def recursive_dfs(graph, node):
-    result = [node]
-    seen = set(node)
-
-    def recursive_helper(node):
-        for neighbor in graph[node]:
-            if neighbor not in seen:
-                result.append(neighbor)     # this line will be replaced below
-                seen.add(neighbor)
-                recursive_helper(neighbor)
-
-    recursive_helper(node)
-    return result
-
-visited=recursive_dfs(graph, 'A') 
-print visited
+def DFS(vertex):
+    if not visited[vertex]:
+        visited[vertex]=True
+        for neighbor in graph[vertex]:
+            DFS(neighbor)
+        outputStack.append(vertex)
+        
+graph = { 1 : set([2]), 2: set([4]), 3: set([2]), 4:set([5]), 5:set([]) , 6: set([7]), 7 :set([]) }
+visited=dict()
+for i in graph.keys():
+    visited[i]=False
+outputStack=[]
+    
+for vertex in graph.keys():
+    DFS(vertex)
+print outputStack

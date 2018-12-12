@@ -5,7 +5,7 @@ def BFS(vertex):
         queue.append(vertex)
         while queue: 
           s = queue.pop(0) 
-          print (s, end = " ") 
+          output_queue.append(s)
           for i in graph[s]: 
               if visited[i] == False: 
                   queue.append(i) 

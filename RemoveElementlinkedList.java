@@ -55,6 +55,18 @@ class Main {
     }
   }
 
+  public void reverseLinkedList() {
+    Node prev=null;
+    Node current = head;
+    while(current != null) {
+      Node nextNode=current.next;
+      current.next=prev;
+      prev=current;
+      current=nextNode;
+    }
+    head=prev;
+  }
+
 
   public static void main(String[] args) {
     Main llist= new Main();
@@ -76,6 +88,10 @@ class Main {
     llist.removeNode(second);
     System.out.println();
     llist.traversal();
+    llist.reverseLinkedList();
+    System.out.println();
+    llist.traversal();
+
   }
 
 }

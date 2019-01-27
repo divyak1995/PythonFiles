@@ -1,2 +1,2 @@
 # PythonFiles
-Various algorithms implement in python programming language.
+Various algorithms implemented in python programming language.

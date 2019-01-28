@@ -14,7 +14,7 @@ def RoundPrices(prices, target):
 
     while iteration > 0:
         #minimize the error by popping the highest value.
-        value, index = heappop(maxHeap) 
+        value, index = heappop(heap) 
         res[index] = ceil(prices[index])
         iteration -= 1
         

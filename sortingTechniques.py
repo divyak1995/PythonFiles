@@ -43,12 +43,12 @@ def mergeSort(arr):
 				j+=1
 			k+=1
 
-		if i<len(left):
+		while i<len(left):
 			arr[k]=left[i]
 			i+=1
 			k+=1
 
-		if j<len(right):
+		while j<len(right):
 			arr[k]=right[j]
 			j+=1
 			k+=1
@@ -75,15 +75,15 @@ def quickSort(arr):
 		return arr
 
 def insertionSort(arr):
-	for i in range(1,len(arr)):
-		key=arr[i]
-		for j in range(i-1,0,-1):
-			if key < arr[j]:
-				arr[i]=temp
-				temp=arr[j]
-				arr[j]=temp
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+        while j>=0 and key < arr[j]:
+            arr[j+1] = arr[j]
+            j-=1
+        arr[j+1] = key
 
-	return arr
+    return arr
 
 
 
